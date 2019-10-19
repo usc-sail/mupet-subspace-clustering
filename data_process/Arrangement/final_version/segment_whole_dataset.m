@@ -1,5 +1,4 @@
 file = 'C57_all_RUs.mat';
-%file = 'filter_data_new';
 V = load(file);
 V = V.V;
 % parameter of syllables extracted by mupet
@@ -39,7 +38,7 @@ newS = pdist2(temdata',temdata','cosine');
 newS = newS+eye(nb_syllables);
 minS = min(newS);
 
-S = minS<0.3; %index of cc smaller than 0.2
+S = minS<0.2; %index of cc smaller than 0.2
 
 count_inlier = sum(S);
 disp(strcat('inlier nb: ',num2str(count_inlier)))
@@ -53,6 +52,6 @@ inlier_V = V(:,S);
 outlier_V = V(:,~S);
 inlier_newV = newV(:,S);
 outlier_newV = newV(:,~S);
-%file = 'segmented_data.mat';
-%save(file,'inlier_V','outlier_V','inlier_newV','outlier_newV');
+file = 'C57_segmented_data.mat';
+save(file,'inlier_V','outlier_V','inlier_newV','outlier_newV');
 
