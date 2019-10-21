@@ -37,7 +37,7 @@ NbRows = 5;
 [center,category_data,category_num] = show_center(data,label,K,feature,T,mode,NbRows);
 center = reshape(center,[64*size(center,2),K]);
 d = pdist(center','cosine');
-mean_d = mean(d);
+mean_d = 1/mean(1./d);
 std_d = std(d);
 disp(mean_d)
 disp(std_d)
@@ -51,7 +51,7 @@ total_label = [label,I];
 [total_center,total_category_data,total_category_num] = show_center(total_data,total_label,K,feature,T,mode,NbRows);
 total_center = reshape(total_center,[64*size(total_center,2),K]);
 total_d = pdist(total_center','cosine');
-total_mean_d = mean(total_d);
+total_mean_d = 1/mean(1./total_d);
 total_std_d = std(total_d);
 disp(total_mean_d)
 disp(total_std_d)
