@@ -1,5 +1,5 @@
 # MUPET: Sparse subspace clustering
-This repo contains code to cluster mice vocalizations using sparse subspace clustering.
+This repo contains code to cluster mouse vocalizations using sparse subspace clustering.
 
 ## Instructions
 1. Download a sample dataset from [here](https://github.com/mvansegbroeck/mupet/wiki/MUPET-wiki).
